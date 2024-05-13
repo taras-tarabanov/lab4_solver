@@ -10,7 +10,7 @@ matrix = np.array([
 riven_znachushchosti = 0.05
 
 row_means = np.mean(matrix, axis=1)
-print(row_means)
+#print(row_means)
 print(fr"\begin{{align}}")
 for i, row in enumerate(matrix):
     latex_code = fr"\bar{{x}}_{i+1}* &= \frac{{1}}{{5}}({'+'.join(map(str, row))}) = {row_means[i]} \\"
@@ -55,16 +55,15 @@ k2 = 20 - 4 # Total number of observations minus number of groups
 K_cr = f.ppf(1 - riven_znachushchosti, k1, k2)
 
 # Display results
-print(fr"\begin{{align}}")
 print(fr"F_{{\text{{observed}}}} &= {F_observed:.4f} \\")
 print(fr"F_{{0.05; {k1}; {k2}}} &= {K_cr:.4f} \\")
 
 # Decision
 if F_observed > K_cr:
-    print(r"\text{Since } F_{\text{observed}} > F_{\text{critical}}, \text{ we reject } H_0.")
+    print(r"\text{Since } &F_{\text{observed}} > F_{\text{critical}}, \text{ we reject } H_0.")
     print(r"\text{There is significant difference in the group means.}")
 else:
-    print(r"\text{Since } F_{\text{observed}} \leq F_{\text{critical}}, \text{ we do not reject } H_0.")
+    print(r"\text{Since } &F_{\text{observed}} \leq F_{\text{critical}}, \text{ we do not reject } H_0.")
     print(r"\text{There is no significant difference in the group means.}")
 print(fr"\end{{align}}")
 
