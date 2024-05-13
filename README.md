@@ -23,11 +23,10 @@ Q_2 &= (200 - 164.0)^2+(140 - 164.0)^2+(170 - 164.0)^2+(145 - 164.0)^2+(165 - 16
 s_1^2 &= \frac{Q_1}{4-1} = \frac{4980}{3} = 1660.00 \\
 s_2^2 &= \frac{Q_2}{20-4} = \frac{7270}{16} = 454.38 \\
 K_{\text{cnoc}} &= \frac{s_1^2}{s_2^2} = \frac{1660.00}{454.38} = 3.65 \\
-\begin{align}
 F_{\text{observed}} &= 3.6534 \\
 F_{0.05; 3; 16} &= 3.2389 \\
-\text{Since } F_{\text{observed}} > F_{\text{critical}}, \text{ we reject } H_0.
-\text{There is significant difference in the group means.}
+\text{Since } &F_{\text{observed}} > F_{\text{critical}}, \text{ we reject } H_0.
+\text{There is &significant difference in the group means.}
 \end{align}
 ```
 ## Code
