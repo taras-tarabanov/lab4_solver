@@ -8,7 +8,14 @@ matrix = np.array([
     [47, 51.2, 50.1, 48.1],
     [48.3, 47.8, 47, 48.1]
 ])
+matrix = np.array([
+    [200, 140, 170, 145, 165],
+    [190, 150, 210, 150, 150],
+    [230, 190, 200, 190, 200],
+    [150, 170, 150, 170, 180]
+])
 riven_znachushchosti = 0.01
+riven_znachushchosti = 0.05
 
 row_means = np.mean(matrix, axis=1)
 #print(row_means)
@@ -56,14 +63,14 @@ k2 = 20 - matrix.shape[0] # Total number of observations minus number of groups
 K_cr = f.ppf(1 - riven_znachushchosti, k1, k2)
 
 # Display results
-print(fr"F_{{\text{{cn}}}} &= {F_observed:.4f} \\")
-print(fr"F_{{0.05; {k1}; {k2}}} &= {K_cr:.4f} \\")
+#print(fr"F_{{\text{{cn}}}} &= {F_observed:.4f} \\")
+print(fr"K_{{\text{{kp}}}}&=F_{{0.05; {k1}; {k2}}} = {K_cr:.4f} \\")
 
 # Decision
 if F_observed > K_cr:
-    print(r"\text{Since } &F_{\text{observed}} > F_{\text{critical}}, \text{ we reject } H_0.")
+    print(r"\text{Since } &K_{{\text{{cnoc}}}} > K_{{\text{{kp}}}}, \text{ we reject } H_0.")
     print(r"\text{There is significant difference in the group means.}")
 else:
-    print(r"\text{Since } &F_{\text{observed}} \leq F_{\text{critical}}, \text{ we do not reject } H_0.")
+    print(r"\text{Since } &K_{{\text{{cnoc}}}} \leq K_{{\text{{kp}}}}, \text{ we do not reject } H_0.")
     print(r"\text{There is no significant difference in the group means.}")
 print(fr"\end{{align}}")
